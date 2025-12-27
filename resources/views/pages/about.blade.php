@@ -143,7 +143,7 @@
 </style>
 
 <!-- Hero Section -->
-<section class="about-hero">
+<section class="about-hero scroll-reveal">
     <div class="container">
         <h1>عن وقف المودة</h1>
         <p>مؤسسة خيرية تسعى لخدمة المجتمع من خلال برامج ومبادرات نوعية تهدف إلى نشر الخير والعلم في المجتمع</p>
@@ -166,7 +166,7 @@
         </div>
 
         <!-- Vision and Mission -->
-        <div class="vision-mission-grid">
+        <div class="vision-mission-grid scroll-reveal-right">
             <div class="vm-card">
                 <h3>رؤيتنا</h3>
                 <p>
@@ -187,8 +187,8 @@
 <!-- Values Section -->
 <section class="values-section">
     <div class="container">
-        <h2 class="section-title">قيمنا</h2>
-        <div class="values-grid">
+        <h2 class="section-title scroll-reveal">قيمنا</h2>
+        <div class="values-grid scroll-reveal" style="transition-delay: {{ 0.10 }}s;">
             <div class="value-card">
                 <div class="value-icon">🤝</div>
                 <h4>الأمانة</h4>

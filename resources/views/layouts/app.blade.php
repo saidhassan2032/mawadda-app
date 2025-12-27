@@ -432,6 +432,51 @@
         mobileToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
+
+        // دالة لفحص إذا كان العنصر ظاهر في الشاشة
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    // دالة لفحص إذا كان جزء من العنصر ظاهر
+    function isElementPartiallyInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+        const vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
+        return vertInView;
+    }
+
+    
+    function handleScrollAnimations() {
+        
+        const scrollElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
+        
+        scrollElements.forEach(el => {
+            // add class "active"
+            if (isElementPartiallyInViewport(el)) {
+                el.classList.add('active');
+            }
+        });
+    }
+
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        handleScrollAnimations();
+    });
+
+    window.addEventListener('scroll', function() {
+        handleScrollAnimations();
+    });
+
+    window.addEventListener('resize', function() {
+        handleScrollAnimations();
+    });
     </script>
 </body>
 </html>
