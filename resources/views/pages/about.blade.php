@@ -5,85 +5,6 @@
 
 @section('content')
     <style>
-        .about-hero {
-            background: linear-gradient(135deg, var(--primary-brown) 0%, var(--primary-brown-dark) 100%);
-            padding: 10rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-
-        }
-
-        .about-hero .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .about-title-wrapper {
-            display: inline-block;
-            position: relative;
-            margin-bottom: 2rem;
-        }
-
-        .about-hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: #ffffff;
-            margin: 0;
-            padding: 1.5rem 3rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 3px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .about-title-wrapper::before,
-        .about-title-wrapper::after {
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            border: 3px solid var(--accent-gold);
-        }
-
-        .about-title-wrapper::before {
-            top: -10px;
-            right: -10px;
-            border-bottom: none;
-            border-left: none;
-            border-top-right-radius: 10px;
-        }
-
-        .about-title-wrapper::after {
-            bottom: -10px;
-            left: -10px;
-            border-top: none;
-            border-right: none;
-            border-bottom-left-radius: 10px;
-        }
-
-        .about-hero p {
-            font-size: 1.4rem;
-            color: rgba(255, 255, 255, 0.95);
-            line-height: 2.2;
-            font-weight: 500;
-            max-width: 800px;
-            margin: 0 auto;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            letter-spacing: 0.3px;
-        }
-
         .about-text {
             max-width: 100%;
             margin: 20px auto 5rem;
@@ -389,15 +310,6 @@
             }
         }
     </style>
-
-    <!-- Hero Section -->
-    <section class="about-hero scroll-reveal">
-        <div class="container">
-            <div class="about-title-wrapper">
-                <h1>عن وقف المودة</h1>
-            </div>
-        </div>
-    </section>
 
     <!-- About Content -->
     <section class="about-content-section">

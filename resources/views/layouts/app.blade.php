@@ -419,7 +419,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; {{ date('Y') }} وقف المودة. جميع الحقوق محفوظة.</p>
+                <p> جميع الحقوق محفوظة لوقف المودة &copy; {{ date('Y') }} </p>
             </div>
         </div>
     </footer>
