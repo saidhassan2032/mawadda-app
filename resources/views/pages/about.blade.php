@@ -265,25 +265,6 @@
 
         @media (max-width: 768px) {
 
-            .about-hero {
-                padding: 4rem 0;
-            }
-
-            .about-hero h1 {
-                font-size: 2.5rem;
-                padding: 1.2rem 2rem;
-            }
-
-            .about-hero p {
-                font-size: 1.15rem;
-                line-height: 2;
-            }
-
-            .about-title-wrapper::before,
-            .about-title-wrapper::after {
-                width: 20px;
-                height: 20px;
-            }
 
             .about-text {
                 padding: 2rem 1.5rem;
@@ -331,8 +312,36 @@
             </div>
 
             <!-- Vision and Mission -->
+            <h2 class="section-title scroll-reveal">الرؤية والرسالة</h2>
             <div class="vision-mission-grid scroll-reveal-right">
                 <div class="vm-card">
+                    <div style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <svg width="70" height="70" viewBox="0 0 64 64">
+
+                            <!-- telescope body -->
+                            <rect x="16" y="22" width="36" height="10" rx="4"
+                                    transform="rotate(-15 16 22)"
+                                    fill="#8B5A2B"/>
+
+                            <!-- eyepiece -->
+                            <circle cx="18" cy="28" r="5" fill="#5A3E1B"/>
+
+                            <!-- lens -->
+                            <circle cx="50" cy="28" r="6" fill="#C19A6B"/>
+
+                            <!-- tripod center -->
+                            <line x1="32" y1="36" x2="32" y2="56"
+                                    stroke="#8B5A2B" stroke-width="4"/>
+
+                            <!-- tripod legs -->
+                            <line x1="32" y1="36" x2="22" y2="56"
+                                    stroke="#8B5A2B" stroke-width="4"/>
+                            <line x1="32" y1="36" x2="42" y2="56"
+                                    stroke="#8B5A2B" stroke-width="4"/>
+
+                            </svg>
+ 
+                    </div>
                     <h3>رؤيتنا</h3>
                     <p>
                         أن نكون وقفاً رائداً في العمل الخيري والتنموي، يساهم في بناء مجتمع متكامل يقوم على العلم والمودة
@@ -341,6 +350,29 @@
                 </div>
 
                 <div class="vm-card">
+                    <div style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <svg width="70" height="70" viewBox="0 0 64 64">
+
+                            <!-- outer circle -->
+                            <circle cx="32" cy="32" r="22"
+                                    stroke="#8B5A2B" stroke-width="4" fill="none"/>
+
+                            <!-- middle circle -->
+                            <circle cx="32" cy="32" r="14"
+                                    stroke="#8B5A2B" stroke-width="3" fill="none"/>
+
+                            <!-- center -->
+                            <circle cx="32" cy="32" r="4" fill="#5A3E1B"/>
+
+                            <!-- arrow -->
+                            <line x1="10" y1="32" x2="32" y2="32"
+                                    stroke="#8B5A2B" stroke-width="3"/>
+                            <polygon points="32,28 38,32 32,36"
+                                    fill="#8B5A2B"/>
+
+                            </svg>
+
+                    </div>
                     <h3>رسالتنا</h3>
                     <p>
                         تقديم برامج ومبادرات خيرية نوعية تخدم المجتمع وتحقق التنمية المستدامة من خلال الاستثمار الأمثل
