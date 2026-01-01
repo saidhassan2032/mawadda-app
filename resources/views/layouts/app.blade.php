@@ -359,7 +359,7 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">الرئيسية</a></li>
                 <li><a href="{{ route('about') }}" class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}">عن الوقف</a></li>
-                <li><a href="{{ route('founder') }}" class="nav-link {{ request()->routeIs('founder') ? 'active' : '' }}">كلمة الواقف</a></li>
+                <li><a href="{{ route('founder') }}" class="nav-link {{ request()->routeIs('founder') ? 'active' : '' }}">كلمة الواقفين</a></li>
                 <li><a href="{{ route('governance.index') }}" class="nav-link {{ request()->routeIs('governance.*') ? 'active' : '' }}">الحوكمة</a></li>
                 <li><a href="{{ route('activities.index') }}" class="nav-link {{ request()->routeIs('activities.*') ? 'active' : '' }}">أنشطة الوقف</a></li>
                 <li><a href="{{ route('contact') }}" class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">تواصل معنا</a></li>
@@ -384,7 +384,7 @@
                 <div class="footer-section">
                     <h3>روابط سريعة</h3>
                     <a href="{{ route('about') }}">عن الوقف</a>
-                    <a href="{{ route('founder') }}">كلمة الواقف</a>
+                    <a href="{{ route('founder') }}">كلمة الواقفين</a>
                     <a href="{{ route('governance.index') }}">الحوكمة</a>
                     <a href="{{ route('activities.index') }}">أنشطة الوقف</a>
                 </div>
