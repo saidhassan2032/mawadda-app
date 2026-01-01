@@ -7,62 +7,304 @@
 <style>
 
     .hero-home {
-        background: linear-gradient(135deg, var(--primary-brown) 0%, var(--primary-brown-dark) 100%);
-        padding: 8rem 0;
-        position: relative;
-        overflow: hidden;
-    }
+    background: linear-gradient(135deg, var(--primary-brown) 0%, var(--primary-brown-dark) 100%);
+    padding: 10rem 0 8rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
 
-    .hero-home::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    }
+.hero-background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
 
-    .hero-content-wrapper {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        position: relative;
-        z-index: 1;
+.hero-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    animation: float 20s ease-in-out infinite;
+}
+
+.hero-shape-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--accent-gold-light);
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+.hero-shape-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--accent-gold);
+    bottom: -100px;
+    left: -100px;
+    animation-delay: 5s;
+}
+
+.hero-shape-3 {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 10s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+.hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.02) 35px, rgba(255,255,255,.02) 70px);
+    pointer-events: none;
+}
+
+.hero-content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-badge svg {
+    width: 20px;
+    height: 20px;
+}
+
+.hero-home h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.hero-title-main {
+    display: block;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-title-accent {
+    display: block;
+    font-size: 0.5em;
+    background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.hero-home p {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    line-height: 1.8;
+    margin: 0 auto 3rem;
+    font-weight: 400;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.1rem 2.5rem;
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(184, 149, 106, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(184, 149, 106, 0.5);
+    color: #ffffff;
+}
+
+.btn-primary svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover svg {
+    transform: translateX(-5px);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.1rem 2.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent-gold-light);
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.stat-divider {
+    width: 2px;
+    height: 50px;
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+@media (max-width: 768px) {
+    .hero-home {
+        padding: 6rem 0 4rem;
+        min-height: auto;
     }
 
     .hero-home h1 {
-        font-size: 4rem;
-        font-weight: 800;
-        color: #ffffff;
-        margin-bottom: 1.5rem;
-        letter-spacing: -1px;
+        font-size: 3rem;
     }
 
     .hero-home p {
-        font-size: 1.6rem;
-        color: rgba(255, 255, 255, 0.9);
-        max-width: 700px;
-        line-height: 2;
-        margin-bottom: 2.5rem;
-    }
-
-    .btn-primary {
-        display: inline-block;
-        padding: 1rem 2.5rem;
-        background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: 600;
         font-size: 1.1rem;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(184, 149, 106, 0.3);
+        margin-bottom: 2rem;
     }
 
-    .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 25px rgba(184, 149, 106, 0.4);
-        color: #ffffff;
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 3rem;
     }
 
+    .btn-primary,
+    .btn-secondary {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+
+    .stat-divider {
+        width: 50px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    }
+
+    .hero-shape-1,
+    .hero-shape-2,
+    .hero-shape-3 {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+    /* video Section */
     .video-section {
         padding: 6rem 0;
         background-color: var(--bg-light);
@@ -459,7 +701,7 @@
 
     @media (max-width: 768px) {
         .hero-home h1 {
-            font-size: 2.5rem;
+            font-size: 2.7rem;
         }
 
         .hero-home p {
@@ -539,10 +781,43 @@
 
 
 <section class="hero-home scroll-reveal">
+    <div class="hero-background">
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+        <div class="hero-shape hero-shape-3"></div>
+    </div>
+    <div class="hero-pattern"></div>
+    
     <div class="hero-content-wrapper">
-        <h1 class="scroll-reveal">وقف المودة</h1>
-        <p>مؤسسة خيرية تسعى لخدمة المجتمع من خلال برامج ومبادرات نوعية تهدف إلى نشر الخير والعلم في المجتمع</p>
-        <a href="{{ route('about') }}" class="btn-primary">تعرف على الوقف</a>
+        <div class="hero-badge scroll-reveal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+            </svg>
+            <span>مؤسسة وقفية معتمدة</span>
+        </div>
+        
+        <h1 class="scroll-reveal">
+            <span class="hero-title-main">وقف المودة</span>
+            
+        </h1>
+        
+        <p class="scroll-reveal">مؤسسة خيرية تسعى لخدمة المجتمع من خلال برامج ومبادرات نوعية تهدف إلى نشر الخير والعلم في المجتمع</p>
+        
+        <div class="hero-buttons scroll-reveal">
+            <a href="{{ route('about') }}" class="btn-primary">
+                <span>تعرف على الوقف</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+            <a href="{{ route('activities.index') }}" class="btn-secondary">
+                <span>تصفح الأنشطة</span>
+            </a>
+        </div>
+        
     </div>
 </section>
 
