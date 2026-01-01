@@ -584,7 +584,7 @@
             @foreach($stats as $index => $stat)
             
             <div class="stat-card scroll-reveal" style="transition-delay: {{ $index * 0.02 }}s;">
-                <span class="stat-number">{{ $stat['number'] }}</span>
+                <span class="stat-number" data-target="{{ $stat['number'] }}">0</span>
                 <div class="stat-label">{{ $stat['label'] }}</div>
                 <div class="stat-description">{{ $stat['description'] }}</div>
             </div>
@@ -615,7 +615,7 @@
 
             
             <div class="opinions-container" id="opinionsContainer">
-                <!-- بطاقات التقييمات ستتم إضافتها هنا بواسطة JavaScript -->
+                <!-- the cards will add by JavaScript -->
             </div>
 
             
@@ -627,7 +627,38 @@
 </section>
 
 <script>
+
+    // ------------------------------------- //
+    // stats section - animated counting
+    document.addEventListener('DOMContentLoaded', () => {
+    const statCards = document.querySelectorAll('.stat-card');
     
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                const statNumber = entry.target.querySelector('.stat-number');
+                const target = parseInt(statNumber.getAttribute('data-target'));
+                let count = 0;
+                const speed = target / 50;
+                
+                const updateCount = () => {
+                    count += speed;
+                    if (count < target) {
+                        statNumber.textContent = Math.floor(count) + '+';
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        statNumber.textContent = target + '+';
+                    }
+                };
+                
+                updateCount();
+                entry.target.classList.add('counted');
+            }
+        });
+    });
+    
+    statCards.forEach(card => observer.observe(card));
+});
 
     // ------------------------------------- //
     // opinions section
