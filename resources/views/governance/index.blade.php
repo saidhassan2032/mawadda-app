@@ -7,7 +7,7 @@
 <style>
 /* Hero Section */
 .governance-hero {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    background: linear-gradient(135deg, var(--primary-brown) 0%, var(--primary-brown-dark) 100%);
     padding: 10rem 0 12rem;
     position: relative;
     overflow: hidden;
@@ -17,9 +17,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: 
-        radial-gradient(circle at 20% 30%, rgba(184, 149, 106, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(139, 115, 85, 0.15) 0%, transparent 50%);
+    background: linear-gradient(135deg, var(--primary-brown-dark) 0%, transparent 100%); 
 }
 
 .governance-hero::after {
@@ -50,7 +48,7 @@
 .hero-shape-2 {
     width: 500px;
     height: 500px;
-    background: linear-gradient(225deg, var(--primary-brown-light) 0%, var(--accent-gold) 100%);
+    background: linear-gradient(225deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
     border-radius: 70% 30% 30% 70% / 60% 60% 40% 40%;
     bottom: -150px;
     left: -150px;
@@ -95,7 +93,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.8rem;
-    background: linear-gradient(135deg, rgba(184, 149, 106, 0.2) 0%, rgba(139, 115, 85, 0.2) 100%);
+    background: linear-gradient(135deg, rgba(184, 149, 106, 0.2) 0%, rgba(184, 149, 106, 0.15) 100%);
     backdrop-filter: blur(20px);
     padding: 0.9rem 2rem;
     border-radius: 50px;
@@ -166,7 +164,7 @@
 .deco-circle-1 {
     width: 100%;
     height: 100%;
-    border-color: rgba(184, 149, 106, 0.2);
+    border-color: rgba(226, 221, 214, 0.2);
     animation-direction: normal;
 }
 
@@ -175,7 +173,7 @@
     height: 85%;
     top: 7.5%;
     left: 7.5%;
-    border-color: rgba(184, 149, 106, 0.15);
+    border-color: rgba(226, 221, 214, 0.2);
     border-style: dashed;
     animation-direction: reverse;
     animation-duration: 20s;
@@ -186,7 +184,7 @@
     height: 70%;
     top: 15%;
     left: 15%;
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(226, 221, 214, 0.2);
     animation-duration: 25s;
 }
 
@@ -266,7 +264,7 @@
 /* Main Section */
 .governance-section {
     padding: 6rem 0 8rem;
-    background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+    background-color: var(--bg-light);
     position: relative;
     margin-top: -4rem;
     overflow: hidden;
@@ -279,7 +277,7 @@
     left: 0;
     right: 0;
     height: 200px;
-    background: linear-gradient(180deg, #2d2d2d 0%, transparent 100%);
+    background: linear-gradient(180deg, var(--bg-light) 0%, transparent 100%);
     pointer-events: none;
 }
 
@@ -287,7 +285,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.02)"/></pattern></defs><rect width="60" height="60" fill="url(%23dots)"/></svg>');
+    background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="rgba(139,115,85,0.03)"/></pattern></defs><rect width="60" height="60" fill="url(%23dots)"/></svg>');
     opacity: 0.5;
 }
 
@@ -307,19 +305,17 @@
 }
 
 .governance-card {
-    background: linear-gradient(135deg, rgba(45, 45, 45, 0.8) 0%, rgba(30, 30, 30, 0.9) 100%);
-    backdrop-filter: blur(20px);
+    background: linear-gradient(135deg, rgba(184, 149, 106, 0.08) 0%, rgba(184, 149, 106, 0.12) 100%);
     border-radius: 24px;
     padding: 3rem 2.5rem;
     text-decoration: none;
     color: inherit;
     box-shadow: 
-        0 20px 60px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
+        0 15px 30px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(184, 149, 106, 0.15);
+    transition: all 0.4s ease;
+    position: relative;
 }
 
 .governance-card::before {
@@ -342,7 +338,7 @@
     left: 50%;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(184, 149, 106, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(184, 149, 106, 0.2) 0%, transparent 80%);
     opacity: 0;
     transform: translate(-50%, -50%);
     transition: opacity 0.5s ease;
@@ -371,7 +367,7 @@
 .governance-icon-wrapper {
     width: 85px;
     height: 85px;
-    background: linear-gradient(135deg, rgba(184, 149, 106, 0.15) 0%, rgba(139, 115, 85, 0.15) 100%);
+    background: linear-gradient(135deg, rgba(184, 149, 106, 0.15) 0%, rgba(184, 149, 106, 0.2) 100%);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -415,7 +411,7 @@
 
 .governance-card:hover .governance-icon {
     transform: scale(1.1);
-    filter: brightness(0) invert(1) drop-shadow(0 4px 12px rgba(255, 255, 255, 0.5));
+    filter: drop-shadow(0 6px 12px rgba(184, 149, 106, 0.5));
 }
 
 /* Content */
@@ -427,7 +423,7 @@
 .governance-card h3 {
     font-size: 1.6rem;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--primary-brown);
     margin-bottom: 1rem;
     line-height: 1.4;
     transition: all 0.3s ease;
@@ -440,13 +436,13 @@
 
 .governance-card p {
     font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-gray);
     line-height: 1.9;
     margin-bottom: 1.5rem;
 }
 
 .governance-card:hover p {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--primary-brown);
 }
 
 /* Arrow Icon */
@@ -454,7 +450,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--accent-gold-light);
+    color: var(--accent-gold);
     font-weight: 600;
     font-size: 0.95rem;
     transition: all 0.3s ease;
@@ -469,6 +465,7 @@
     background: rgba(184, 149, 106, 0.2);
     border-color: var(--accent-gold);
     box-shadow: 0 4px 20px rgba(184, 149, 106, 0.3);
+    color: var(--accent-gold-light);
 }
 
 .card-arrow svg {
@@ -485,7 +482,7 @@
     position: absolute;
     top: 1.5rem;
     left: 1.5rem;
-    background: linear-gradient(135deg, rgba(139, 115, 85, 0.1) 0%, rgba(184, 149, 106, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(184, 149, 106, 0.1) 0%, rgba(184, 149, 106, 0.15) 100%);
     color: var(--primary-brown);
     font-size: 0.8rem;
     font-weight: 600;
@@ -498,7 +495,7 @@
 .governance-features {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(139, 115, 85, 0.1);
+    border-top: 1px solid rgba(184, 149, 106, 0.15);
 }
 
 .governance-feature-item {

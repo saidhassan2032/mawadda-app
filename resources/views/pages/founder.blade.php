@@ -322,10 +322,6 @@
             <div class="hero-divider"></div>
             <p>رؤية وكلمة من مؤسسي وقف المودة</p>
             <div class="hero-scroll">
-                <span>مرر للأسفل</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
             </div>
         </div>
     </div>
