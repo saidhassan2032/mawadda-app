@@ -222,7 +222,6 @@
 .info-icon {
     width: 65px;
     height: 65px;
-    background: linear-gradient(135deg, rgba(184, 149, 106, 0.15) 0%, rgba(184, 149, 106, 0.2) 100%);
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -233,8 +232,7 @@
 }
 
 .info-card:hover .info-icon {
-    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
-    transform: rotate(5deg) scale(1.1);
+    transform: scale(1.1);
     box-shadow: 0 8px 25px rgba(184, 149, 106, 0.4);
 }
 
