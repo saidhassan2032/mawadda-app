@@ -109,15 +109,15 @@
 }
 
 .hero-home h1 {
-    font-size: 5rem;
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 1.5rem;
-    letter-spacing: -2px;
-    line-height: 1.2;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    font-size: 5.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 2rem;
+    letter-spacing: -3px;
+    line-height: 1.1;
 }
 
 .hero-title-main {

@@ -5,134 +5,499 @@
 
 @section('content')
 <style>
+/* Hero Section */
+.activities-hero {
+    background: linear-gradient(135deg, var(--primary-brown) 0%, var(--primary-brown-dark) 100%);
+    padding: 14rem 15rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.02) 35px, rgba(255,255,255,.02) 70px);
+    pointer-events: none;
+}
+
+.activities-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--primary-brown-dark) 0%, transparent 100%);
+}
+
+.activities-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="60" height="60" fill="url(%23dots)"/></svg>');
+    opacity: 0.4;
+}
+
+/* Animated Shapes */
+.hero-shape {
+    position: absolute;
+    opacity: 0.08;
+    animation: float-shape 20s ease-in-out infinite;
+}
+
+.hero-shape-1 {
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    top: -200px;
+    right: -200px;
+    filter: blur(120px);
+}
+
+.hero-shape-2 {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(225deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+    border-radius: 70% 30% 30% 70% / 60% 60% 40% 40%;
+    bottom: -150px;
+    left: -150px;
+    filter: blur(100px);
+    animation-delay: 7s;
+}
+
+@keyframes float-shape {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(50px, -50px) rotate(120deg);
+    }
+    66% {
+        transform: translate(-30px, 30px) rotate(240deg);
+    }
+}
+
+.activities-hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+/* Badge */
+.activities-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, rgba(184, 149, 106, 0.2) 0%, rgba(184, 149, 106, 0.15) 100%);
+    backdrop-filter: blur(20px);
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    border: 1px solid rgba(184, 149, 106, 0.3);
+    box-shadow: 0 8px 32px rgba(184, 149, 106, 0.15);
+    animation: badge-glow 3s ease-in-out infinite;
+}
+
+@keyframes badge-glow {
+    0%, 100% {
+        box-shadow: 0 8px 32px rgba(184, 149, 106, 0.15);
+    }
+    50% {
+        box-shadow: 0 8px 40px rgba(184, 149, 106, 0.3);
+    }
+}
+
+.activities-badge svg {
+    filter: drop-shadow(0 2px 4px rgba(184, 149, 106, 0.4));
+}
+
+/* Title */
+.activities-hero h1 {
+    font-size: 5.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 2rem;
+    letter-spacing: -3px;
+    line-height: 1.1;
+}
+
+.activities-hero p {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 2.1;
+    font-weight: 400;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Activities List Section */
+.activities-list {
+    padding: 6rem 0 8rem;
+    background-color: var(--bg-light);
+    position: relative;
+    margin-top: -4rem;
+    overflow: hidden;
+}
+
+.activities-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(180deg, var(--bg-light) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.activities-list::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="rgba(139,115,85,0.03)"/></pattern></defs><rect width="60" height="60" fill="url(%23dots)"/></svg>');
+    opacity: 0.5;
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Activity Card */
+.activity-card {
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(184, 149, 106, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.activity-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--card-gradient);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease;
+    z-index: 2;
+}
+
+.activity-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 
+        0 35px 70px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(184, 149, 106, 0.3);
+}
+
+.activity-card:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Activity Header with Image */
+.activity-header {
+    padding: 4.5rem 2.5rem 3.5rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.activity-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.75) 100%);
+    z-index: 1;
+}
+
+.activity-header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="60" height="60" fill="url(%23dots)"/></svg>');
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.activity-header h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+    letter-spacing: -0.5px;
+}
+
+.activity-header h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent-gold-light);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.activity-header p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.9;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Activity Body */
+.activity-body {
+    padding: 2.8rem;
+    background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+    position: relative;
+    z-index: 2;
+}
+
+.activity-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1.2rem 3rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 14px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 8px 20px rgba(0, 0, 0, 0.15),
+        0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.3px;
+}
+
+.activity-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.activity-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.activity-link:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.25),
+        0 8px 15px rgba(0, 0, 0, 0.15);
+    color: #ffffff;
+}
+
+.activity-link:hover::before {
+    opacity: 1;
+}
+
+.activity-link:hover::after {
+    opacity: 1;
+}
+
+.activity-link span {
+    position: relative;
+    z-index: 1;
+}
+
+.activity-link svg {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.activity-link:hover svg {
+    transform: translateX(-5px);
+}
+
+/* Icon Badge on Cards */
+.activity-icon {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    z-index: 2;
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+.activity-icon::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: var(--card-gradient);
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.activity-icon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.activity-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    border-radius: 15px;
+}
+
+.activity-card:hover .activity-icon {
+    transform: scale(1.1);
+    border-color: transparent;
+}
+
+.activity-card:hover .activity-icon::before {
+    opacity: 1;
+}
+
+.activity-card:hover .activity-icon img {
+    transform: scale(1.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
     .activities-hero {
-        background: linear-gradient(135deg, var(--primary-brown) 0%, var(--primary-brown-dark) 100%);
-        padding: 3rem 0;
-        text-align: center;
+        padding: 5rem 0 7rem;
     }
 
     .activities-hero h1 {
-        font-size: 3.5rem;
-        font-weight: 800;
-        color: #ffffff;
-        margin-bottom: 1rem;
+        font-size: 3rem;
+        letter-spacing: -1px;
     }
 
     .activities-hero p {
-        font-size: 1.3rem;
-        color: rgba(255, 255, 255, 0.9);
-        max-width: 700px;
-        margin: 0 auto;
+        font-size: 1.15rem;
     }
 
     .activities-list {
-        padding: 6rem 0;
+        padding: 4rem 0 5rem;
+        margin-top: -3rem;
     }
 
     .activities-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-        gap: 3rem;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .activity-card {
-        background: #ffffff;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
-        border: 1px solid rgba(139, 115, 85, 0.1);
-    }
-
-    .activity-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
     }
 
     .activity-header {
-        padding: 4rem 2.5rem 3rem;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .activity-header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        opacity: 0.05;
-        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="white"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        padding: 3rem 2rem 2.5rem;
+        min-height: 300px;
     }
 
     .activity-header h2 {
-        font-size: 2.2rem;
-        font-weight: 700;
-        color: #ffffff;
-        margin-bottom: 0.5rem;
-        position: relative;
-        z-index: 1;
+        font-size: 2rem;
     }
 
     .activity-header h3 {
-        font-size: 1.3rem;
-        font-weight: 500;
-        color: rgba(255, 255, 255, 0.95);
-        margin-bottom: 1.5rem;
-        position: relative;
-        z-index: 1;
+        font-size: 1.2rem;
     }
 
     .activity-header p {
-        font-size: 1.1rem;
-        color: rgba(255, 255, 255, 0.9);
-        line-height: 1.8;
-        position: relative;
-        z-index: 1;
+        font-size: 1.05rem;
     }
 
     .activity-body {
-        padding: 2.5rem;
+        padding: 2rem;
     }
 
     .activity-link {
-        display: inline-block;
-        padding: 1rem 2.5rem;
-        background-color: var(--primary-brown);
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: 600;
+        width: 100%;
+        padding: 1.1rem 2rem;
         font-size: 1.05rem;
-        border-radius: 8px;
-        transition: all 0.3s ease;
     }
 
-    .activity-link:hover {
-        background-color: var(--primary-brown-dark);
-        transform: translateX(-5px);
-        color: #ffffff;
+    .activity-icon {
+        width: 65px;
+        height: 65px;
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .activities-hero h1 {
+        font-size: 4.5rem;
     }
 
-    @media (max-width: 768px) {
-        .activities-grid {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
-        .activities-hero h1 {
-            font-size: 2.5rem;
-        }
+    .activities-grid {
+        grid-template-columns: 1fr;
     }
+}
 </style>
 
 <!-- Hero Section -->
 <section class="activities-hero">
-    <div class="container">
-        <h1>أنشطة الوقف</h1>
-        <p>نسعى من خلال برامجنا المتنوعة إلى خدمة المجتمع وتحقيق أهداف الوقف النبيلة</p>
+    <div class="hero-shape hero-shape-1"></div>
+    <div class="hero-shape hero-shape-2"></div>
+    <div class="hero-pattern"></div>
+    <div class="activities-hero-content">
+        <div class="activities-badge scroll-reveal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>برامجنا ومبادراتنا</span>
+        </div>
+        
+        <h1 class="scroll-reveal">أنشطة الوقف</h1>
+        <p class="scroll-reveal">
+            نسعى من خلال برامجنا المتنوعة إلى خدمة المجتمع وتحقيق أهداف الوقف النبيلة
+        </p>
     </div>
 </section>
 
@@ -140,8 +505,9 @@
 <section class="activities-list">
     <div class="container">
         <div class="activities-grid">
-            @foreach($activities as $activity)
-            <div class="activity-card">
+            @foreach($activities as $index => $activity)
+            <div class="activity-card scroll-reveal" 
+                 style="--card-gradient: linear-gradient(90deg, {{ $activity['color_from'] }} 0%, {{ $activity['color_to'] }} 100%); transition-delay: {{ $index * 0.1 }}s;">
                 <div class="activity-header" style="
                     background:
                     linear-gradient(
@@ -150,6 +516,9 @@
                     ),
                     url('/images/{{ $activity['image'] }}') center / cover no-repeat;
                 ">
+                    <div class="activity-icon">
+                        <img src="/images/{{ $activity['image'] }}" alt="{{ $activity['title'] }}">
+                    </div>
                     <h2>{{ $activity['title'] }}</h2>
                     <h3>{{ $activity['subtitle'] }}</h3>
                     <p>{{ $activity['description'] }}</p>
@@ -157,7 +526,11 @@
                 <div class="activity-body">
                     <a href="{{ route('activities.show', ['slug' => $activity['slug']]) }}" class="activity-link" 
                         style="background: linear-gradient(135deg, {{ $activity['color_from'] }} 0%, {{ $activity['color_to'] }} 100%);">
-                        اعرف المزيد ←
+                        <span>اعرف المزيد</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
                     </a>
                 </div>
             </div>

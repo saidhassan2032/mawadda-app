@@ -12,7 +12,13 @@
     position: relative;
     overflow: hidden;
 }
-
+.hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.02) 35px, rgba(255,255,255,.02) 70px);
+    pointer-events: none;
+}
 .governance-hero::before {
     content: '';
     position: absolute;
@@ -367,7 +373,7 @@
 .governance-icon-wrapper {
     width: 85px;
     height: 85px;
-    background: linear-gradient(135deg, rgba(184, 149, 106, 0.15) 0%, rgba(184, 149, 106, 0.2) 100%);
+    background: linear-gradient(135deg, rgba(184, 149, 106, 0.15) 0%, rgba(138, 122, 104, 0.2) 100%);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -382,7 +388,6 @@
     content: '';
     position: absolute;
     inset: -2px;
-    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
     border-radius: 20px;
     opacity: 0;
     transition: opacity 0.4s ease;
@@ -390,12 +395,7 @@
 }
 
 .governance-card:hover .governance-icon-wrapper {
-    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
-    transform: rotate(5deg) scale(1.1);
-    box-shadow: 
-        0 10px 40px rgba(184, 149, 106, 0.5),
-        0 0 60px rgba(184, 149, 106, 0.3);
-    border-color: transparent;
+    transform: scale(1.1);
 }
 
 .governance-card:hover .governance-icon-wrapper::before {
@@ -406,7 +406,6 @@
 .governance-icon {
     font-size: 2.5rem;
     transition: all 0.4s ease;
-    filter: drop-shadow(0 4px 8px rgba(184, 149, 106, 0.3));
 }
 
 .governance-card:hover .governance-icon {
@@ -608,7 +607,7 @@
 <section class="governance-hero">
     <div class="hero-shape hero-shape-1"></div>
     <div class="hero-shape hero-shape-2"></div>
-    
+    <div class="hero-pattern"></div>
     <div class="governance-hero-content">
         <div class="hero-grid">
             <div class="hero-text">

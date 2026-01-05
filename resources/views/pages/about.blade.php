@@ -113,15 +113,15 @@
         }
 
         .hero-home h1 {
-            font-size: 5rem;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 1.5rem;
-            letter-spacing: -2px;
-            line-height: 1.2;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+            font-size: 5.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            letter-spacing: -3px;
+            line-height: 1.1;
         }
 
         .hero-title-main {
@@ -425,9 +425,6 @@
             padding: 3rem 2.5rem;
             border-radius: 24px;
             text-align: center;
-            box-shadow:
-                0 15px 30px rgba(0, 0, 0, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(184, 149, 106, 0.15);
             transition: all 0.4s ease;
             position: relative;
@@ -440,7 +437,6 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
             transform: scaleX(0);
             transform-origin: right;
             transition: transform 0.5s ease;
@@ -448,21 +444,19 @@
 
         .value-card:hover {
             transform: translateY(-12px);
-            box-shadow:
-                0 30px 60px rgba(0, 0, 0, 0.15),
-                0 0 0 1px rgba(184, 149, 106, 0.3);
+            
             border-color: var(--accent-gold);
         }
 
         .value-card:hover::before {
             transform: scaleX(1);
-            transform-origin: left;
+            
         }
 
         .value-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, rgba(184, 149, 106, 0.15) 0%, rgba(184, 149, 106, 0.2) 100%);
+            background: linear-gradient(135deg, rgba(184, 149, 106, 0.15) 0%, rgba(138, 122, 104, 0.2) 100%);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -474,11 +468,7 @@
         }
 
         .value-card:hover .value-icon {
-            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
-            transform: rotate(5deg) scale(1.1);
-            box-shadow:
-                0 10px 40px rgba(184, 149, 106, 0.4),
-                0 0 60px rgba(184, 149, 106, 0.3);
+            transform: scale(1.1);
         }
 
         .value-card h4 {

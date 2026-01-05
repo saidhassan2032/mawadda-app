@@ -65,12 +65,15 @@
     }
 
     .founder-hero h1 {
-        font-size: 4rem;
-        font-weight: 800;
-        color: #ffffff;
-        margin-bottom: 1.5rem;
-        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        animation: fadeInUp 0.8s ease-out;
+        font-size: 5.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 2rem;
+    letter-spacing: -3px;
+    line-height: 1.1;
     }
 
     @keyframes fadeInUp {
