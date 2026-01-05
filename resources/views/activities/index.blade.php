@@ -13,14 +13,6 @@
     overflow: hidden;
 }
 
-.hero-pattern {
-    position: absolute;
-    inset: 0;
-    background-image: 
-        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.02) 35px, rgba(255,255,255,.02) 70px);
-    pointer-events: none;
-}
-
 .activities-hero::before {
     content: '';
     position: absolute;

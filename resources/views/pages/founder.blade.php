@@ -24,17 +24,6 @@
         pointer-events: none;
     }
 
-    .hero-pattern {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: 
-            repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px);
-        pointer-events: none;
-    }
-
     .hero-content {
         position: relative;
         z-index: 1;
@@ -66,14 +55,14 @@
 
     .founder-hero h1 {
         font-size: 5.5rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold-light) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 2rem;
-    letter-spacing: -3px;
-    line-height: 1.1;
+        font-weight: 900;
+        background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold-light) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 2rem;
+        letter-spacing: -3px;
+        line-height: 1.1;
     }
 
     @keyframes fadeInUp {
