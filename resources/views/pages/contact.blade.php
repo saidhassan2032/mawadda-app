@@ -81,18 +81,17 @@
 .contact-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
-    background: linear-gradient(135deg, rgba(184, 149, 106, 0.2) 0%, rgba(184, 149, 106, 0.15) 100%);
-    backdrop-filter: blur(20px);
-    padding: 0.9rem 2rem;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 0.75rem 1.5rem;
     border-radius: 50px;
     color: #ffffff;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 2.5rem;
-    border: 1px solid rgba(184, 149, 106, 0.3);
-    box-shadow: 0 8px 32px rgba(184, 149, 106, 0.15);
-    animation: badge-glow 3s ease-in-out infinite;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes badge-glow {
@@ -118,7 +117,7 @@
     background-clip: text;
     margin-bottom: 2rem;
     letter-spacing: -3px;
-    line-height: 1.1;
+    line-height: 1.5;
 }
 
 .contact-hero p {

@@ -62,7 +62,7 @@
         background-clip: text;
         margin-bottom: 2rem;
         letter-spacing: -3px;
-        line-height: 1.1;
+        line-height: 1.5;
     }
 
     @keyframes fadeInUp {
