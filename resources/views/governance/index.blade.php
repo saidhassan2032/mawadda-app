@@ -305,13 +305,13 @@
 }
 
 .governance-card {
-    background: linear-gradient(135deg, rgba(184, 149, 106, 0.08) 0%, rgba(184, 149, 106, 0.12) 100%);
+    background: linear-gradient(135deg, #ffffff 0%, var(--bg-light) 100%);
     border-radius: 24px;
     padding: 3rem 2.5rem;
     text-decoration: none;
     color: inherit;
     box-shadow: 
-        0 15px 30px rgba(0, 0, 0, 0.3),
+        0 15px 30px rgba(100, 99, 99, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(184, 149, 106, 0.15);
     transition: all 0.4s ease;
@@ -338,7 +338,7 @@
     left: 50%;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(184, 149, 106, 0.2) 0%, transparent 80%);
+    background: radial-gradient(circle, rgba(196, 180, 159, 0.2) 0%, transparent 80%);
     opacity: 0;
     transform: translate(-50%, -50%);
     transition: opacity 0.5s ease;
@@ -348,7 +348,7 @@
 .governance-card:hover {
     transform: translateY(-12px) scale(1.02);
     box-shadow: 
-        0 30px 80px rgba(0, 0, 0, 0.6),
+        0 30px 80px rgba(162, 159, 159, 0.6),
         0 0 0 1px rgba(184, 149, 106, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     border-color: var(--accent-gold);
