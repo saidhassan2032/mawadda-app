@@ -640,18 +640,13 @@
             <div class="vision-mission-grid">
                 <div class="vm-card scroll-reveal">
                     <div class="vm-icon-wrapper">
-                        <svg width="50" height="50" viewBox="0 0 64 64">
-                            <rect x="16" y="22" width="36" height="10" rx="4" transform="rotate(-15 16 22)"
-                                fill="#8B5A2B" />
-                            <circle cx="18" cy="28" r="5" fill="#5A3E1B" />
-                            <circle cx="50" cy="28" r="6" fill="#C19A6B" />
-                            <line x1="32" y1="36" x2="32" y2="56" stroke="#8B5A2B"
-                                stroke-width="4" />
-                            <line x1="32" y1="36" x2="22" y2="56" stroke="#8B5A2B"
-                                stroke-width="4" />
-                            <line x1="32" y1="36" x2="42" y2="56" stroke="#8B5A2B"
-                                stroke-width="4" />
-                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" 
+                        viewBox="0 0 24 24" fill="none" stroke="var(--primary-brown)" stroke-width="2" stroke-linecap="round" 
+                        stroke-linejoin="round" class="lucide lucide-telescope-icon lucide-telescope">
+                        <path d="m10.065 12.493-6.18 1.318a.934.934 0 0 1-1.108-.702l-.537-2.15a1.07 1.07 0 0 1 .691-1.265l13.504-4.44"/>
+                        <path d="m13.56 11.747 4.332-.924"/><path d="m16 21-3.105-6.21"/>
+                        <path d="M16.485 5.94a2 2 0 0 1 1.455-2.425l1.09-.272a1 1 0 0 1 1.212.727l1.515 6.06a1 1 0 0 1-.727 1.213l-1.09.272a2 2 0 0 1-2.425-1.455z"/>
+                        <path d="m6.158 8.633 1.114 4.456"/><path d="m8 21 3.105-6.21"/><circle cx="12" cy="13" r="2"/></svg>
                     </div>
                     <h3>رؤيتنا</h3>
                     <p>
@@ -663,12 +658,12 @@
                 <div class="vm-card scroll-reveal">
                     <div class="vm-icon-wrapper">
                         <svg width="50" height="50" viewBox="0 0 64 64">
-                            <circle cx="32" cy="32" r="22" stroke="#8B5A2B" stroke-width="4"
+                            <circle cx="32" cy="32" r="22" stroke="var(--primary-brown)" stroke-width="4"
                                 fill="none" />
-                            <circle cx="32" cy="32" r="14" stroke="#8B5A2B" stroke-width="3"
+                            <circle cx="32" cy="32" r="14" stroke="var(--primary-brown)" stroke-width="3"
                                 fill="none" />
                             <circle cx="32" cy="32" r="4" fill="#5A3E1B" />
-                            <line x1="10" y1="32" x2="32" y2="32" stroke="#8B5A2B"
+                            <line x1="10" y1="32" x2="32" y2="32" stroke="var(--primary-brown)"
                                 stroke-width="3" />
                             <polygon points="32,28 38,32 32,36" fill="#8B5A2B" />
                         </svg>
@@ -689,19 +684,38 @@
             <h2 class="section-title scroll-reveal">قيمنا</h2>
             <div class="values-grid">
                 <div class="value-card scroll-reveal" style="transition-delay: 0.1s;">
-                    <div class="value-icon">🤝</div>
+                    <div class="value-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" 
+                        viewBox="0 0 24 24" fill="none" stroke="var(--primary-brown)" stroke-width="2" stroke-linecap="round" 
+                        stroke-linejoin="round" class="lucide lucide-handshake-icon lucide-handshake">
+                        <path d="m11 17 2 2a1 1 0 1 0 3-3"/>
+                        <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/>
+                        <path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
+                    </div>
                     <h4>الأمانة</h4>
                     <p>نلتزم بأعلى معايير الأمانة في إدارة موارد الوقف وتنفيذ البرامج</p>
                 </div>
 
                 <div class="value-card scroll-reveal" style="transition-delay: 0.2s;">
-                    <div class="value-icon">🎯</div>
+                    <div class="value-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" 
+                        viewBox="0 0 24 24" fill="none" stroke="var(--primary-brown)" stroke-width="2" stroke-linecap="round" 
+                        stroke-linejoin="round" class="lucide lucide-shield-check-icon lucide-shield-check">
+                        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+                        <path d="m9 12 2 2 4-4"/></svg>
+                    </div>
                     <h4>الجودة</h4>
                     <p>نسعى لتقديم أعلى مستويات الجودة في برامجنا وخدماتنا</p>
                 </div>
 
                 <div class="value-card scroll-reveal" style="transition-delay: 0.3s;">
-                    <div class="value-icon">🌱</div>
+                    <div class="value-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" 
+                        viewBox="0 0 24 24" fill="none" stroke="var(--primary-brown)" stroke-width="2" stroke-linecap="round" 
+                        stroke-linejoin="round" class="lucide lucide-sprout-icon lucide-sprout">
+                        <path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3"/>
+                        <path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4"/><path d="M5 21h14"/></svg>
+                    </div>
                     <h4>الاستدامة</h4>
                     <p>نعمل على ضمان استدامة برامجنا وأثرها الإيجابي على المجتمع</p>
                 </div>
