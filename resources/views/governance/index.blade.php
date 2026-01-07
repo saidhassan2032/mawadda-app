@@ -197,7 +197,7 @@
 
 .hero-center-icon {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 8rem;
@@ -396,6 +396,7 @@
 }
 
 .governance-icon {
+    color: var(--primary-brown);  
     font-size: 2.5rem;
     transition: all 0.4s ease;
 }
@@ -549,7 +550,7 @@
     }
 
     .hero-center-icon {
-        font-size: 5rem;
+        font-size: 3rem;
     }
 
     .floating-element {
@@ -624,7 +625,11 @@
                     <div class="deco-circle deco-circle-2"></div>
                     <div class="deco-circle deco-circle-3"></div>
                     
-                    <div class="hero-center-icon">📋</div>
+                    <div class="hero-center-icon">
+                        <svg fill="var(--accent-gold-light" width="150px" height="150px" 
+                        viewBox="-2 0 19 19" xmlns="http://www.w3.org/2000/svg" class="cf-icon-svg">
+                        <path d="M14.427 14.75v.491H.573v-.49a.476.476 0 0 1 .475-.476h.411a.497.497 0 0 1-.002-.048v-.443a.476.476 0 0 1 .475-.475h.41V9.692h-.307a.554.554 0 1 1 0-1.108h10.963a.554.554 0 1 1 0 1.108h-.292v3.617h.362a.476.476 0 0 1 .475.475v.443a.364.364 0 0 1-.003.048h.412a.476.476 0 0 1 .475.475zm-1.72-7.043a5.182 5.182 0 1 0-10.364 0zm-9.188 5.602h1.109v-3.062a.554.554 0 1 0-1.109 0zm2.294-3.053v3.053h1.109v-3.053a.554.554 0 1 0-1.109 0zm2.294.008v3.045h1.109v-3.045a.554.554 0 1 0-1.109 0zm2.294.008v3.037h1.109v-3.037a.554.554 0 0 0-1.109 0z"/></svg>
+                    </div>
                     
                     <div class="floating-element floating-element-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -659,7 +664,7 @@
             @foreach ($governanceContent as $index => $item)
                 <a href="{{ $item['route'] }}" class="governance-card scroll-reveal" style="transition-delay: {{ $index * 0.1 }}s;">
                     <div class="governance-icon-wrapper">
-                        <div class="governance-icon">{{ $item['icon'] }}</div>
+                        <div class="governance-icon">{!! $item['icon'] !!}</div>
                     </div>
                     
                     <div class="governance-card-content">
