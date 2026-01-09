@@ -207,10 +207,13 @@
 
 /* Activity Header with Image */
 .activity-header {
-    padding: 4.5rem 2.5rem 3.5rem;
     position: relative;
     overflow: hidden;
     min-height: 350px;
+    padding-top: calc(2rem + 80px + 2rem);
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    padding-bottom: 3.5rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -427,7 +430,10 @@
     }
 
     .activity-header {
-        padding: 3rem 2rem 2.5rem;
+        padding-top: calc(2rem + 65px + 1.5rem);
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 2.5rem;
         min-height: 300px;
     }
 
