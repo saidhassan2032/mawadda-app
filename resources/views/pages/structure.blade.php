@@ -272,6 +272,7 @@
     width: 90px;
     height: 90px;
     background: linear-gradient(135deg, rgba(175, 159, 140, 0.15) 0%, rgba(147, 136, 122, 0.2) 100%);
+    color: var(--primary-brown);
     border-radius: 22px;
     display: flex;
     align-items: center;
@@ -538,7 +539,9 @@
             <!-- Level 1: Top Management -->
             <div class="org-level">
                 <div class="org-card level-1 scroll-reveal">
-                    <div class="org-icon">👤</div>
+                    <div class="org-icon">
+                        {!! $structureItems[0]['icon'] !!}
+                    </div>
                     <h3 class="org-title">{{ $structureItems[0]['title'] }}</h3>
                     <p class="org-description">{{ $structureItems[0]['description'] }}</p>
                 </div>
@@ -547,7 +550,9 @@
             <!-- Level 2: Board of Directors -->
             <div class="org-level">
                 <div class="org-card level-2 scroll-reveal" style="transition-delay: 0.1s;">
-                    <div class="org-icon">🏛️</div>
+                    <div class="org-icon">
+                        {!! $structureItems[1]['icon'] !!}
+                    </div>
                     <h3 class="org-title">{{ $structureItems[1]['title'] }}</h3>
                     <p class="org-description">{{ $structureItems[1]['description'] }}</p>
                 </div>
@@ -557,13 +562,10 @@
             <div class="org-level-3-wrapper">
                 <div class="org-level-3">
                     @foreach(array_slice($structureItems, 2) as $index => $item)
-                    <div class="org-card level-3 scroll-reveal" style="transition-delay: {{ ($index + 2) * 0.1 }}s;">
-                        @php
-                            $icons = ['💼', '⚖️', '🌱', '📊'];
-                        @endphp
+                    <div class="org-card level-3 scroll-reveal">
 
                         <div class="org-icon">
-                            {{ $icons[$index] ?? '📌' }}
+                            {!! $item['icon'] !!}
                         </div>
                         <h3 class="org-title">{{ $item['title'] }}</h3>
                         <p class="org-description">{{ $item['description'] }}</p>
