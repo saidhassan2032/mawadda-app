@@ -59,6 +59,100 @@
             line-height: 1.8;
         }
 
+        /* hero section */
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-brown) 0%, var(--primary-brown-dark) 100%);
+            padding: 10rem 0 8rem;
+            position: relative;
+            overflow: hidden;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+        }
+
+        .hero-section-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-badge svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 5.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            letter-spacing: -3px;
+            line-height: 1.5;
+        }
+
+        .hero-title-main {
+            display: block;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-title-accent {
+            display: block;
+            font-size: 0.5em;
+            background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            line-height: 1.8;
+            margin: 0 auto 3rem;
+            font-weight: 400;
+        }
+
         /* Navigation Styles */
         .navbar {
             background-color: #ffffff;

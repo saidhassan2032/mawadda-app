@@ -5,129 +5,6 @@
 
 @section('content')
 <style>
-/* Hero Section */
-.contact-hero {
-    background: linear-gradient(135deg, var(--primary-brown) 0%, var(--primary-brown-dark) 100%);
-    padding: 8rem 0 10rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.contact-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, var(--primary-brown-dark) 0%, transparent 100%);
-}
-
-.contact-hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="60" height="60" fill="url(%23dots)"/></svg>');
-    opacity: 0.4;
-}
-
-/* Animated Shapes */
-.hero-shape {
-    position: absolute;
-    opacity: 0.08;
-    animation: float-shape 20s ease-in-out infinite;
-}
-
-.hero-shape-1 {
-    width: 600px;
-    height: 600px;
-    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    top: -200px;
-    right: -200px;
-    filter: blur(120px);
-}
-
-.hero-shape-2 {
-    width: 500px;
-    height: 500px;
-    background: linear-gradient(225deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
-    border-radius: 70% 30% 30% 70% / 60% 60% 40% 40%;
-    bottom: -150px;
-    left: -150px;
-    filter: blur(100px);
-    animation-delay: 7s;
-}
-
-@keyframes float-shape {
-    0%, 100% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-    33% {
-        transform: translate(50px, -50px) rotate(120deg);
-    }
-    66% {
-        transform: translate(-30px, 30px) rotate(240deg);
-    }
-}
-
-.contact-hero-content {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    position: relative;
-    z-index: 1;
-    text-align: center;
-}
-
-/* Badge */
-.contact-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
-    color: #ffffff;
-    font-size: 0.95rem;
-    font-weight: 500;
-    margin-bottom: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-@keyframes badge-glow {
-    0%, 100% {
-        box-shadow: 0 8px 32px rgba(184, 149, 106, 0.15);
-    }
-    50% {
-        box-shadow: 0 8px 40px rgba(184, 149, 106, 0.3);
-    }
-}
-
-.contact-badge svg {
-    filter: drop-shadow(0 2px 4px rgba(184, 149, 106, 0.4));
-}
-
-/* Title */
-.contact-hero h1 {
-    font-size: 5.5rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold-light) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 2rem;
-    letter-spacing: -3px;
-    line-height: 1.5;
-}
-
-.contact-hero p {
-    font-size: 1.4rem;
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 2.1;
-    font-weight: 400;
-    max-width: 800px;
-    margin: 0 auto;
-}
 
 /* Contact Section */
 .contact-section {
@@ -471,14 +348,11 @@ textarea.form-control {
 </style>
 
 <!-- Hero Section -->
-<section class="contact-hero">
-    <div class="hero-shape hero-shape-1"></div>
-    <div class="hero-shape hero-shape-2"></div>
-
+<section class="hero-section">
     <div class="hero-pattern"></div>
     
-    <div class="contact-hero-content">
-        <div class="contact-badge scroll-reveal">
+    <div class="hero-section-wrapper">
+        <div class="hero-badge scroll-reveal">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
             </svg>
@@ -491,6 +365,7 @@ textarea.form-control {
         </p>
     </div>
 </section>
+
 
 <!-- Contact Section -->
 <section class="contact-section">
