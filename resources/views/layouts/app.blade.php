@@ -43,15 +43,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        .hero-pattern {
-            position: absolute;
-            inset: 0;
-            background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.02) 35px, rgba(255,255,255,.02) 70px);
-            pointer-events: none;
-        }
+        }        
         body {
             font-family: 'Rubik', sans-serif;
             color: var(--text-dark);
@@ -61,6 +53,13 @@
 
         /* hero section */
 
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.02) 35px, rgba(255,255,255,.02) 70px);
+            pointer-events: none;
+        }
         .hero-section {
             background: linear-gradient(135deg, var(--primary-brown) 0%, var(--primary-brown-dark) 100%);
             padding: 10rem 0 8rem;
@@ -296,66 +295,6 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-brown) 0%, var(--primary-brown-dark) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.5;
-        }
-
-        .hero-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 8rem 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
-        }
-
-        .hero-content p {
-            font-size: 1.4rem;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 700px;
-            line-height: 2;
-            margin-bottom: 2.5rem;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(184, 149, 106, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(184, 149, 106, 0.4);
-        }
-
         /* Container */
         .container {
             max-width: 1400px;
@@ -429,6 +368,16 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 780px) {
+            .hero-section h1 {
+                font-size: 3.8rem;
+                letter-spacing: -1px;
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+        }
+       
         @media (max-width: 968px) {
             .mobile-toggle {
                 display: block;

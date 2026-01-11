@@ -5,29 +5,6 @@
 
 @section('content')
 <style>
-    .founder-hero {
-        background: linear-gradient(135deg, var(--primary-brown) 0%, var(--primary-brown-dark) 100%);
-        padding: 1rem 0 1rem;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(circle at 30% 50%, rgba(212, 175, 120, 0.15) 0%, transparent 50%),
-                    radial-gradient(circle at 70% 50%, rgba(139, 115, 85, 0.15) 0%, transparent 50%);
-        pointer-events: none;
-    }
-
-    .hero-content {
-        position: relative;
-        z-index: 1;
-    }
 
     .hero-icon {
         width: 100px;
@@ -53,77 +30,6 @@
         }
     }
 
-    .founder-hero h1 {
-        font-size: 5.5rem;
-        font-weight: 900;
-        background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold-light) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 2rem;
-        letter-spacing: -3px;
-        line-height: 1.5;
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    .hero-divider {
-        width: 80px;
-        height: 4px;
-        background: linear-gradient(90deg, transparent, var(--accent-gold-light), transparent);
-        margin: 0 auto 1.5rem;
-        border-radius: 2px;
-    }
-
-    .founder-hero p {
-        font-size: 1.4rem;
-        color: rgba(255, 255, 255, 0.95);
-        max-width: 700px;
-        margin: 0 auto;
-        font-weight: 400;
-        letter-spacing: 0.5px;
-    }
-
-    .hero-scroll {
-        margin-top: 3rem;
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 0.9rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .hero-scroll:hover {
-        color: #ffffff;
-        transform: translateY(5px);
-    }
-
-    .hero-scroll svg {
-        animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
-            transform: translateY(0);
-        }
-        40% {
-            transform: translateY(-10px);
-        }
-        60% {
-            transform: translateY(-5px);
-        }
-    }
 
 /* Founder Content Section */
     .founder-content {
@@ -267,21 +173,10 @@
     }
 
     @media (max-width: 768px) {
-        .founder-hero {
-            padding: 0.5rem 0 0.5rem;
-        }
         .hero-icon {
             width: 80px;
             height: 80px;
         }
-        .hero-icon svg {
-            width: 40px;
-            height: 40px;
-        }
-        .founder-hero h1 {
-            font-size: 2.5rem;
-        }
-
         .founder-card {
             padding: 2rem;
         }
@@ -297,11 +192,10 @@
 </style>
 
 <!-- Hero Section -->
-<section class="founder-hero">
-    <div class="hero-overlay"></div>
+<section class="hero-section scroll-reveal">
     <div class="hero-pattern"></div>
     <div class="container">
-        <div class="hero-content">
+        <div class="hero-section-wrapper">
             <div class="hero-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
@@ -311,7 +205,7 @@
                 </svg>
             </div>
             <h1>كلمة الواقفين</h1>
-            <div class="hero-divider"></div>
+            
             <p>رؤية وكلمة من مؤسسي وقف المودة</p>
             <div class="hero-scroll">
             </div>
