@@ -5,140 +5,6 @@
 
 @section('content')
     <style>
-        /* Hero Section */
-        .hero-home {
-            background: linear-gradient(135deg, var(--primary-brown) 0%, var(--primary-brown-dark) 100%);
-            padding: 10rem 0 8rem;
-            position: relative;
-            overflow: hidden;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-background {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-        }
-
-        .hero-shape {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.15;
-            animation: float 20s ease-in-out infinite;
-        }
-
-        .hero-shape-1 {
-            width: 500px;
-            height: 500px;
-            background: var(--accent-gold-light);
-            top: -100px;
-            right: -100px;
-            animation-delay: 0s;
-        }
-
-        .hero-shape-2 {
-            width: 400px;
-            height: 400px;
-            background: var(--accent-gold);
-            bottom: -100px;
-            left: -100px;
-            animation-delay: 5s;
-        }
-
-        .hero-shape-3 {
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.1);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation-delay: 10s;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translate(0, 0) scale(1);
-            }
-
-            33% {
-                transform: translate(30px, -30px) scale(1.1);
-            }
-
-            66% {
-                transform: translate(-20px, 20px) scale(0.9);
-            }
-        }
-        .hero-content-wrapper {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            color: #ffffff;
-            font-size: 0.95rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-badge svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        .hero-home h1 {
-            font-size: 5.5rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 2rem;
-            letter-spacing: -3px;
-            line-height: 1.5;
-        }
-
-        .hero-title-main {
-            display: block;
-            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-title-accent {
-            display: block;
-            font-size: 0.5em;
-            background: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
-        }
-
-        .hero-home p {
-            font-size: 1.3rem;
-            color: #ece6e6;
-            max-width: 700px;
-            line-height: 1.8;
-            margin: 0 auto 3rem;
-            font-weight: 500;
-        }
-
 
         /* About Content Section */
         .about-content-section {
@@ -487,36 +353,6 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .about-hero {
-                padding: 6rem 0 8rem;
-            }
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .hero-text {
-                text-align: center;
-            }
-
-            .about-hero h1 {
-                font-size: 3.2rem;
-                letter-spacing: -1px;
-            }
-
-            .about-hero p {
-                font-size: 1.1rem;
-            }
-
-            .hero-decoration {
-                width: 320px;
-                height: 320px;
-            }
-
-            .hero-center-icon {
-                font-size: 5rem;
-            }
 
             .floating-element {
                 display: none;
@@ -552,18 +388,6 @@
         }
 
         @media (min-width: 769px) and (max-width: 1024px) {
-            .hero-grid {
-                gap: 3rem;
-            }
-
-            .about-hero h1 {
-                font-size: 4rem;
-            }
-
-            .hero-decoration {
-                width: 350px;
-                height: 350px;
-            }
 
             .vision-mission-grid {
                 grid-template-columns: 1fr;
@@ -576,15 +400,11 @@
     </style>
 
     <!-- Hero Section -->
-    <section class="hero-home scroll-reveal">
-        <div class="hero-background">
-            <div class="hero-shape hero-shape-1"></div>
-            <div class="hero-shape hero-shape-2"></div>
-            <div class="hero-shape hero-shape-3"></div>
-        </div>
+    <section class="hero-section scroll-reveal">
+        
         <div class="hero-pattern"></div>
 
-        <div class="hero-content-wrapper">
+        <div class="hero-section-wrapper">
             <div class="hero-badge scroll-reveal">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
